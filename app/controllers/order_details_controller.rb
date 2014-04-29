@@ -12,7 +12,7 @@ class OrderDetailsController < ApplicationController
   end
 
   def create
-    @detail = OrderDetail.new(params[:order_detail])
+    @detail = OrderDetail.new(order_details_params)
 
     if @detail.save
       redirect_to @detail
@@ -20,4 +20,10 @@ class OrderDetailsController < ApplicationController
       render action: 'new'
     end
   end
+
+  private
+
+    def order_details_params
+      params.require(:order_detail).permit(:order_id, :product_id, :count)
+    end
 end
