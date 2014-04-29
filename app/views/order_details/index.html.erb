@@ -1,2 +1,25 @@
-<h1>OrderDetails#index</h1>
-<p>Find me in app/views/order_details/index.html.erb</p>
+<h1>注文明細一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>注文ID</th>
+      <th>商品ID</th>
+      <th>注文個数</th>
+      <th>合計金額</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_details.each do |detail| %>
+      <tr>
+        <td><%= detail.order_id %></td>
+        <td><%= detail.product_id %></td>
+        <td><%= detail.count %></td>
+        <td><%= detail.total_price %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
