@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def agreement
   end
+
+  def help
+  end
 end

@@ -1,6 +1,7 @@
 Chumon::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/agreement"
+  get "static_pages/help"
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
