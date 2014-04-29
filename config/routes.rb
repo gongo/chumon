@@ -1,6 +1,7 @@
 Chumon::Application.routes.draw do
-  get "order_details/index"
-  get "order_details/show"
+  get "order_details",     to: 'order_details#index', via: 'get'
+  get "order_details/:id", to: 'order_details#show',  via: 'get'
+
   root 'static_pages#home'
   match '/help',      to: 'static_pages#help',      via: 'get'
   match '/agreement', to: 'static_pages#agreement', via: 'get'

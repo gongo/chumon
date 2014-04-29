@@ -4,6 +4,6 @@ class OrderDetailsController < ApplicationController
   end
 
   def show
-    @detail = OrderDetail.find(1)
+    @detail = OrderDetail.find(params[:id])
   end
 end
