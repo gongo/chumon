@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>注文ID</th>
-      <th>商品ID</th>
+      <th>商品名</th>
       <th>注文個数</th>
       <th>合計金額</th>
       <th></th>
@@ -15,7 +15,7 @@
     <% @order_details.each do |detail| %>
       <tr>
         <td><%= detail.order_id %></td>
-        <td><%= detail.product_id %></td>
+        <td><%= detail.product.name %></td>
         <td><%= detail.count %></td>
         <td><%= detail.total_price %></td>
         <td></td>
