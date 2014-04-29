@@ -1,11 +1,9 @@
 Chumon::Application.routes.draw do
-  get "order_details",     to: 'order_details#index', via: 'get'
-  get "order_details/:id", to: 'order_details#show',  via: 'get', as: 'order_detail'
-
   root 'static_pages#home'
   match '/help',      to: 'static_pages#help',      via: 'get'
   match '/agreement', to: 'static_pages#agreement', via: 'get'
   resources :products
+  resources :order_details, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
