@@ -12,8 +12,12 @@ class OrderDetailsController < ApplicationController
   end
 
   def create
-    p params
-    @detail = OrderDetail.new
-    render action: 'new'
+    @detail = OrderDetail.new(params[:order_detail])
+
+    if @detail.save
+      redirect_to @detail
+    else
+      render action: 'new'
+    end
   end
 end
