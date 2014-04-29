@@ -3,7 +3,7 @@ Chumon::Application.routes.draw do
   match '/help',      to: 'static_pages#help',      via: 'get'
   match '/agreement', to: 'static_pages#agreement', via: 'get'
   resources :products
-  resources :order_details, only: [:index, :show]
+  resources :order_details, only: [:index, :show, :new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
