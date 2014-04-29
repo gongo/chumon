@@ -2,7 +2,7 @@
   <%= image_tag('chumon.png', size: '160x75') %>
 
   <ul>
-    <li><a href="#">Help</a></li>
-    <li><a href="#">利用規約</a></li>
+    <li><%= link_to 'Help', static_pages_help_path %></li>
+    <li><%= link_to '利用規約', static_pages_agreement_path %></li>
   </ul>
 </footer>
