@@ -1,23 +1,6 @@
 <h1>注文明細を編集</h1>
 
-<%= form_for(@detail) do |f| %>
-  <div class="field">
-    <%= f.label :order_id %><br>
-    <%= f.collection_select(:order_id, Order.all, :id, :id) %>
-  </div>
-  <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.collection_select(:product_id, Product.all, :id, :description) %>
-  </div>
-  <div class="field">
-    <%= f.label :count %><br>
-    <%= f.text_field :count %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
+<%= render 'form' %>
 
 <%= link_to 'Show', @detail %>
 <%= link_to 'Back', order_details_path %>
