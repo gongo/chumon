@@ -21,6 +21,20 @@ class OrderDetailsController < ApplicationController
     end
   end
 
+  def edit
+    @detail = OrderDetail.find(params[:id])
+  end
+
+  def update
+    @detail = OrderDetail.find(params[:id])
+
+    if @detail.update(order_details_params)
+      redirect_to @detail
+    else
+      render action: 'edit'
+    end
+  end
+
   private
 
     def order_details_params
