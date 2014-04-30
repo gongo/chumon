@@ -7,7 +7,7 @@
   </div>
   <div class="field">
     <%= f.label :product_id %><br>
-    <%= f.collection_select(:product_id, Product.all, :id, :name) %>
+    <%= f.collection_select(:product_id, Product.all, :id, :description) %>
   </div>
   <div class="field">
     <%= f.label :count %><br>

@@ -19,4 +19,8 @@ class Product < ActiveRecord::Base
   def sales_count
     order_details.sum(:count)
   end
+
+  def description
+    "#{name} (#{price} 円)"
+  end
 end
