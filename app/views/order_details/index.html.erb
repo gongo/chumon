@@ -21,6 +21,7 @@
         <td>
           <%= link_to 'show', detail %>
           <%= link_to 'edit', edit_order_detail_path(detail) %>
+          <%= link_to 'Destroy', detail, method: :delete, data: { confirm: '削除してもよろしいですか?' } %>
         </td>
       </tr>
     <% end %>
