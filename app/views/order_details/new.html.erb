@@ -3,7 +3,7 @@
 <%= form_for(@detail) do |f| %>
   <div class="field">
     <%= f.label :order_id %><br>
-    <%= f.text_field :order_id %>
+    <%= f.collection_select(:order_id, Order.all, :id, :id) %>
   </div>
   <div class="field">
     <%= f.label :product_id %><br>
