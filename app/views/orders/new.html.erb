@@ -1,0 +1,16 @@
+<%= form_for(@order) do |f| %>
+  <%= f.fields_for :order_details do |od| %>
+    <div class="field">
+      <%= od.label  :product_id %><br>
+      <%= od.collection_select(:product_id, @products, :id, :description) %>
+    </div>
+    <div class="field">
+      <%= od.label :count %>
+      <%= od.text_field :count %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
