@@ -4,6 +4,7 @@ Chumon::Application.routes.draw do
   match '/agreement', to: 'static_pages#agreement', via: 'get'
   resources :products
   resources :order_details
+  resources :orders, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

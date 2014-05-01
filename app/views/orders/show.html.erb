@@ -1,0 +1,25 @@
+<p>
+  注文番号: <%= @order.id %>
+</p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>ご注文ありがとうございます <small><%= @order.created_at %></small></h1>
+  </div>
+  <table class="table">
+    <tbody>
+      <% @order.order_details.each do |detail| %>
+        <tr>
+          <td><%= detail.product.name %></td>
+          <td><%= detail.count %>個</td>
+          <td><%= detail.total_price %>円</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="panel-footer">
+    <h3>合計: <%= @order.total_price %>円</h3>
+  </div>
+</div>
+
+
