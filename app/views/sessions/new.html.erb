@@ -1,0 +1,19 @@
+<h1>ログイン</h1>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :login_id %><br>
+    <%= text_field_tag :login_id, params[:login_id] %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions"><%= submit_tag "Log in" %></div>
+<% end %>
+
+<%= link_to 'ユーザ登録する', new_user_path %>

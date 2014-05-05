@@ -9,6 +9,7 @@ Chumon::Application.routes.draw do
   resources :order_details
   resources :orders, only: [:index, :show, :new, :create]
   resources :users, only: [:new, :create]
+  resource :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
