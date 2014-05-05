@@ -14,10 +14,13 @@
             <%= link_to content_tag(:span, 'レジに進む ' + session[:cart].size.to_s, class: 'badge'), new_order_path %>
           </li>
         <% end %>
-        <li><%= link_to 'Log in', new_sessions_path %></li>
-        <li><%= link_to 'Log out', sessions_path,
-                :method => 'delete',
-                data: { confirm: 'ログアウトしてもよろしいですか?'}  %></li>
+        <% if session[:user_id].nil? %>
+          <li><%= link_to 'Log in', new_sessions_path %></li>
+        <% else %>
+          <li><%= link_to 'Log out', sessions_path,
+                  :method => 'delete',
+                  data: { confirm: 'ログアウトしてもよろしいですか?'}  %></li>
+        <% end %>
       </ul>
     </div>
   </div>
