@@ -9,7 +9,9 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    3.times { @order.order_details.build }
+    session[:cart].each do |product_id|
+      @order.order_details.build(product_id: product_id)
+    end
     @products = Product.all
   end
 
