@@ -2,6 +2,9 @@ Chumon::Application.routes.draw do
   root 'static_pages#home'
   match '/help',      to: 'static_pages#help',      via: 'get'
   match '/agreement', to: 'static_pages#agreement', via: 'get'
+
+  post '/products/:id/add_to_cart', to: 'products#add_to_cart', via: 'post', as: 'add_to_cart'
+
   resources :products
   resources :order_details
   resources :orders, only: [:index, :show, :new, :create]

@@ -15,11 +15,11 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @products = Product.all
 
     if @order.save
       redirect_to @order
     else
+      @products = Product.all
       render action: 'new'
     end
   end
