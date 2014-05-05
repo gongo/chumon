@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     if @order.save
+      session[:cart] = []
       redirect_to @order
     else
       @products = Product.all
