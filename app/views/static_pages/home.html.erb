@@ -1,2 +1,7 @@
 <h1>Chumon</h1>
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
 <p>ようこそ Chumon へ!!</p>
