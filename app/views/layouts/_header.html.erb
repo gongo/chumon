@@ -9,6 +9,11 @@
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to '商品一覧', products_path %></li>
         <li><%= link_to '注文一覧', orders_path %></li>
+        <% if !session[:cart].nil? && !session[:cart].empty? %>
+          <li>
+            <%= link_to content_tag(:span, 'レジに進む ' + session[:cart].size.to_s, class: 'badge'), new_order_path %>
+          </li>
+        <% end %>
         <li><%= link_to 'Sign in', '#' %></li>
       </ul>
     </div>
