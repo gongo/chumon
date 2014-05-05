@@ -18,7 +18,7 @@
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td class="order_area">
-          <%= button_to 'カートに追加する', add_to_cart_path(product.id) %>
+          <%= add_to_cart_button(product.id) %>
         </td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
