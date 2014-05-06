@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.1.1'
 
+gem 'thin'
+gem 'foreman'
+
 group :development do
   gem 'hirb-unicode'
 end
