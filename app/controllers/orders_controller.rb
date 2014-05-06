@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:index, :new, :create]
 
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   def show
