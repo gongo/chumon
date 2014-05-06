@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create]
+
   def index
     @orders = Order.all
   end
@@ -31,5 +33,9 @@ class OrdersController < ApplicationController
 
     def order_params
       params.require(:order).permit(order_details_attributes: [:product_id, :count])
+    end
+
+    def logged_in_user
+      redirect_to new_sessions_path, alert: 'ログインしてください' unless logged_in?
     end
 end
